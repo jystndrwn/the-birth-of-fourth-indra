@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Background gelap di-blend dengan gradasi kuning keemasan */
+    background: linear-gradient(45deg, #111111, #3a2e00, #0a0a0a, #4a3d00);
+    background-size: 400% 400%;
+    animation: shimmerBg 10s ease infinite;
+    color: #fff;
+    overflow: hidden; /* Mencegah scroll di body, scroll dihandle di page-2 */
+    height: 100vh;
+}
+
+/* Animasi Shimmering Background */
+@keyframes shimmerBg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 10;
+}
+
+.hidden {
+    opacity: 0;
+    transform: scale(0.9);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.content {
+    text-align: center;
+    background: rgba(10, 10, 10, 0.7);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.15), inset 0 0 20px rgba(255, 215, 0, 0.05);
+    backdrop-filter: blur(10px);
+    max-width: 90%;
+    width: 600px;
+}
+
+.scrollable {
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+/* Efek teks bercahaya / shimmering */
+@keyframes titleShimmer {
+    0% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3); }
+    50% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.5), 0 0 40px rgba(255, 215, 0, 0.3); }
+    100% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3); }
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: #ffd700;
+    margin-bottom: 10px;
+    animation: titleShimmer 3s infinite alternate;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #d4af37;
+}
+
+.btn {
+    background: linear-gradient(135deg, #ffd700, #b8860b);
+    color: #111;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #ffea00, #d4af37);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.photo-card {
+    background: rgba(20, 20, 20, 0.8);
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.2);
+}
+
+.photo-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.caption {
+    font-style: italic;
+    color: #e0e0e0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.message {
+    margin-top: 40px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #f0f0f0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+/* Scrollbar styling - warna kuning keemasan */
+.scrollable::-webkit-scrollbar {
+    width: 8px;
+}
+.scrollable::-webkit-scrollbar-track {
+    background: transparent;
+}
+.scrollable::-webkit-scrollbar-thumb {
+    background: #ffd700;
+    border-radius: 4px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Audio Element -->
+    <!-- Nanti ganti 'music.mp3' dengan nama file musik yang akan Anda berikan -->
+    <audio id="bg-music" loop>
+        <source src="assets/kamu hebat.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <!-- Halaman Pertama: Ucapan Singkat & Tombol -->
+    <div id="page-1" class="page active">
+        <div class="content">
+            <h1 class="title">Selamat Ulang Tahun!</h1>
+            <p class="subtitle">Ada sesuatu yang spesial untukmu...</p>
+            <button id="btn-next" class="btn">Buka Pesan</button>
+        </div>
+    </div>
+
+    <!-- Halaman Kedua: Foto & Ucapan Motivasi -->
+    <div id="page-2" class="page hidden">
+        <div class="content scrollable">
+            <h2 class="title" style="font-size: 3rem;">Untukmu yang Spesial...</h2>
+            
+            <div class="gallery">
+                <!-- Ganti src dengan nama file foto Anda nantinya -->
+                <div class="photo-card">
+                    <!-- Placeholder gambar, nanti bisa diganti dengan foto asli -->
+                    <img src="assets/pekabe.jpg" alt="Foto 1">
+                    <p class="caption">"Setiap perjalanan dimulai dengan satu langkah. Teruslah melangkah dengan penuh keyakinan dan harapan."</p>
+                </div>
+                
+                <div class="photo-card">
+                   <img src="assets/gradu.jpeg" alt="Foto 2">
+                    <p class="caption">"Jadilah dirimu sendiri, karena tidak ada yang lebih indah selain kejujuran pada diri sendiri. Kamu luar biasa apa adanya."</p>
+                </div>
+                
+                <div class="photo-card">
+                    <img src="assets/anjay.jpeg" alt="Foto 3">
+                    <p class="caption">"Semoga di usia yang baru ini, kedewasaan, kebahagiaan, dan kesuksesan selalu menyertaimu di setiap langkah."</p>
+                </div>
+            </div>
+
+            <div class="message">
+                <p>Selamat bertambah usia! Semoga hari-harimu ke depan selalu dipenuhi dengan tawa, cinta, dan keberkahan. Jangan pernah menyerah pada mimpimu, karena kamu lebih kuat dari yang kamu kira. Semoga semua yang kamu semogakan segera terwujud. Selamat ulang tahun!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
